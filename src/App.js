@@ -93,6 +93,7 @@ const Home = () => {
     "Travel Expensive Format",
   ]);
   useEffect(() => {
+    document.title = "Gourmet Popcornica";
     const handleDocumentClick = (event) => {
       if (
         searchResultOpen &&
