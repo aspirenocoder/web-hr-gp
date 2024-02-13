@@ -301,7 +301,7 @@
 
 .button {
   --width: 250px;
-  --height: 80px;
+  --height: 40px;
   /* --button-color: #0d1430; */
   width: var(--width);
   height: var(--height);
@@ -312,6 +312,7 @@
   font-family: "Arial";
   transition: background 0.3s;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .button::before {
