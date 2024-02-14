@@ -1,14 +1,41 @@
 import logo from "./logo.svg";
 import { useState, useEffect } from "react";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const navigate = useNavigate();
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [searchInput, setSearchInput] = useState("");
   const [filteredSubheadings, setFilteredSubheadings] = useState([]);
   const [searchResultOpen, setSearchResultOpen] = useState(false);
   const [formsComponentToRender, setFormsComponentToRender] = useState(false);
   const [contentToRender, setContentToRender] = useState(true);
+  const [downloadableForms, setDownloadableForms] = useState([
+    "Cash Voucher-Factory",
+    "C-Off Form",
+    "Induction Checklist",
+    "Insurance Coverage Form",
+    "Joining Form",
+    "Leave Application",
+    "Leave Card",
+    "Loan Form",
+    "No Due Form - Front Line",
+    "No Due Form",
+    "On Duty Slip",
+    "Permission Slip",
+    "Salary Advance Form",
+    "Travel Advance Requisition",
+    "Travel Expenses Track Sheet",
+    "Travel Expensive Format",
+  ]);
   useEffect(() => {
+    fetch(`/Declaration.html`)
+      .then((response) => response.text())
+      .then((data) => setHtmlContent(data))
+      .catch((error) => console.error("Error loading HTML:", error));
+    document.title = "Gourmet Popcornica";
     const handleDocumentClick = (event) => {
       if (
         searchResultOpen &&
@@ -23,11 +50,6 @@ const Home = () => {
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     };
-
-    fetch(`/Declaration.html`)
-      .then((response) => response.text())
-      .then((data) => setHtmlContent(data))
-      .catch((error) => console.error("Error loading HTML:", error));
   }, []);
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
@@ -186,18 +208,7 @@ const Home = () => {
     {
       heading: {
         title: "Forms & Annexures",
-        subheadings: [
-          "Manpower Requisition Form",
-          "1",
-          "2",
-          "3",
-          "1",
-          "2",
-          "3",
-          "1",
-          "2",
-          "3",
-        ],
+        subheadings: ["Downloadable Forms"],
       },
     },
   ]);
@@ -241,7 +252,7 @@ const Home = () => {
 
   const downloadFile = (filename) => {
     // Path to the file in the public folder
-    const filePath = process.env.PUBLIC_URL + filename;
+    const filePath = process.env.PUBLIC_URL + filename + ".pdf";
 
     // Create a download link
     const downloadLink = document.createElement("a");
@@ -286,6 +297,11 @@ const Home = () => {
         .then((data) => setHtmlContent(data))
         .catch((error) => console.error("Error loading HTML:", error));
     }
+  };
+
+  const signout = () => {
+    window.localStorage.removeItem("number");
+    navigate("/signout", { replace: true });
   };
 
   const MenuIcon = ({ setIsSideBarOpen, isSideBarOpen }) => {
@@ -355,6 +371,9 @@ const Home = () => {
             )}
           </div>
         </div>
+        <div className="signout-btn" onClick={() => signout()}>
+          <p>Sign Out</p>
+        </div>
       </header>
 
       <div className="Container">
@@ -388,17 +407,39 @@ const Home = () => {
             {formsComponentToRender && (
               <div className="mainFormsContainer">
                 <div className="formsContainer">
-                  {dropdownsState[
-                    dropdownsState.length - 1
-                  ].heading.subheadings.map((item, index) => (
+                  {downloadableForms.map((item, index) => (
                     <div
                       key={index}
-                      className="download-item"
+                      className="button"
                       onClick={() => {
                         downloadFile(item);
                       }}
                     >
-                      {item}
+                      <div className="button-wrapper">
+                        <div className="text">
+                          <p style={{ color: "#000" }}>{item}</p>
+                        </div>
+                        <span className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            role="img"
+                            width="2em"
+                            height="2em"
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"
+                            ></path>
+                          </svg>
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
