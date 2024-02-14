@@ -11,7 +11,7 @@ const Login = () => {
   const [otp, setOTP] = useState(null);
   const [mobileNumber, setMobileNumber] = useState("");
   const [error, setError] = useState("");
-  const API_URL = "http://15.207.254.29:5000";
+  const API_URL = "http://3.108.219.210:5000";
 
   useEffect(() => {
     // fetch("http://localhost:5000/api/post", {
