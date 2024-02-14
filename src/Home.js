@@ -2,6 +2,8 @@ import logo from "./logo.svg";
 import { useState, useEffect } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import { RiLogoutBoxRLine } from "react-icons/ri";
+import { IoIosSearch } from "react-icons/io";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,8 +39,10 @@ const Home = () => {
       .catch((error) => console.error("Error loading HTML:", error));
     document.title = "Gourmet Popcornica";
     const handleDocumentClick = (event) => {
+      const searchResultContainer = document.querySelector(".search-result");
       if (
         searchResultOpen &&
+        searchResultContainer &&
         !document.querySelector(".search-result").contains(event.target)
       ) {
         setSearchResultOpen(false);
@@ -50,7 +54,7 @@ const Home = () => {
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     };
-  }, []);
+  }, [searchResultOpen]);
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const [contentState, setContentState] = useState("");
@@ -272,6 +276,7 @@ const Home = () => {
   };
 
   const handleSearchInputChange = (e) => {
+    setSearchResultOpen(true);
     const inputValue = e.target.value;
     setSearchInput(inputValue);
 
@@ -312,7 +317,7 @@ const Home = () => {
 
     return (
       <div
-        className={`container ${isActive ? "change" : ""}`}
+        className={`bar-container ${isActive ? "change" : ""}`}
         onClick={() => toggleClass()}
       >
         <div className="bar1"></div>
@@ -349,7 +354,9 @@ const Home = () => {
               placeholder="Search policies"
               value={searchInput}
               // onBlur={() => setSearchResultOpen(false)}
-              onFocus={() => setSearchResultOpen(true)}
+              onFocus={() => {
+                setSearchResultOpen(true);
+              }}
               onChange={handleSearchInputChange}
             />
             {searchResultOpen && (
@@ -371,8 +378,8 @@ const Home = () => {
             )}
           </div>
         </div>
-        <div className="signout-btn" onClick={() => signout()}>
-          <p>Sign Out</p>
+        <div onClick={() => signout()}>
+          <RiLogoutBoxRLine color="#fff" size={25} />
         </div>
       </header>
 
@@ -398,6 +405,51 @@ const Home = () => {
           }`}
         >
           <div className="Chat-container">
+            <div
+              className="mobile-search"
+              style={{
+                display: "flex",
+                width: "100%",
+                flexDirection: "column",
+                maxHeight: "100%",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <IoIosSearch color="#000" size={25} />
+                <input
+                  className="mobile-search-bar"
+                  placeholder="Search policies"
+                  value={searchInput}
+                  // onBlur={() => setSearchResultOpen(false)}
+                  onFocus={() => setSearchResultOpen(true)}
+                  onChange={handleSearchInputChange}
+                />
+              </div>
+              {searchResultOpen && (
+                <div className="mobile-search-result">
+                  {filteredSubheadings.map((subheading, index) => (
+                    <div
+                      key={index}
+                      className={`dropdown-item search-r`}
+                      onClick={() => {
+                        console.log("hello");
+                        changeFile(subheading);
+                        setSearchResultOpen(false);
+                      }}
+                    >
+                      {subheading}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             {contentToRender && (
               <div
                 className="custom-font"

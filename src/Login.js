@@ -11,6 +11,7 @@ const Login = () => {
   const [otp, setOTP] = useState(null);
   const [mobileNumber, setMobileNumber] = useState("");
   const [error, setError] = useState("");
+  const [color, setColor] = useState("red");
   const API_URL = "http://3.108.219.210:5000";
 
   useEffect(() => {
@@ -40,6 +41,7 @@ const Login = () => {
         .catch((err) => {
           console.log(err);
           setError("Invalid OTP");
+          setColor("red");
         });
       // fetch(`${API_URL}/verify-otp`, {
       //   method: "POST",
@@ -72,7 +74,8 @@ const Login = () => {
           console.log(res.data);
           setOTPSent(true);
           setText("Login");
-          setError("");
+          setError("OTP Sent");
+          setColor("white");
         })
         .catch((err) => console.log(err));
       // fetch(`${API_URL}/send-otp`, {
@@ -120,7 +123,6 @@ const Login = () => {
           type="tel"
           onChange={handleMobileNumberChange}
         />
-        {error !== "" && <p style={{ color: "red" }}>{error}</p>}
         {OTPSent && (
           <input
             placeholder="Enter OTP"
@@ -128,6 +130,8 @@ const Login = () => {
             onChange={handleOTPChange}
           />
         )}
+        {error !== "" && <p style={{ color: color }}>{error}</p>}
+
         {text === "OTP" && (
           <button className="login-button" onClick={() => sendOTP()}>
             Send OTP
