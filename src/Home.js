@@ -32,11 +32,14 @@ const Home = () => {
     "Travel Expenses Track Sheet",
     "Travel Expensive Format",
   ]);
+
   useEffect(() => {
-    fetch(`/Declaration.html`)
-      .then((response) => response.text())
-      .then((data) => setHtmlContent(data))
-      .catch((error) => console.error("Error loading HTML:", error));
+    if (htmlContent === "") {
+      fetch(`/Declaration.html`)
+        .then((response) => response.text())
+        .then((data) => setHtmlContent(data))
+        .catch((error) => console.error("Error loading HTML:", error));
+    }
     document.title = "Gourmet Popcornica";
     const handleDocumentClick = (event) => {
       const searchResultContainer = document.querySelector(".search-result");
@@ -157,8 +160,15 @@ const Home = () => {
     },
     {
       heading: {
-        title: "Performance Appraisal",
-        subheadings: ["Performance Review"],
+        title: "Performance Review",
+        subheadings: [
+          "Purpose",
+          "Performance Scope",
+          "Guidelines",
+          "Roles And Responsibilities",
+          "Performance Management Process",
+          "Policy Approving Authority",
+        ],
       },
     },
     {
@@ -422,7 +432,7 @@ const Home = () => {
                   alignItems: "center",
                 }}
               >
-                <IoIosSearch color="#000" size={25} />
+                <IoIosSearch className="search-icon" color="#000" size={25} />
                 <input
                   className="mobile-search-bar"
                   placeholder="Search policies"
