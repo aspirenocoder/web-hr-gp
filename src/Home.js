@@ -59,9 +59,13 @@ const Home = () => {
     };
   }, [searchResultOpen]);
 
-  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(
+    window.innerWidth < 620 ? false : true
+  );
   const [contentState, setContentState] = useState("");
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(
+    window.innerWidth < 620 ? false : true
+  );
   const [htmlContent, setHtmlContent] = useState("");
   const [subheadingName, setSubheadingName] = useState("");
   const [isSelected, setSelected] = useState(null);
@@ -227,34 +231,95 @@ const Home = () => {
     },
   ]);
 
-  const Dropdown = ({ label, items }) => {
-    const [isOpen, setIsOpen] = useState(false);
+  // const Dropdown = ({ id, label, items }) => {
+  //   const [isOpen, setIsOpen] = useState(false);
+  //   console.log(isOpen);
+  //   const handleToggle = () => {
+  //     setIsOpen(!isOpen);
+  //   };
 
-    const handleToggle = () => {
-      setIsOpen(!isOpen);
+  //   const handleItemClick = (item) => {
+  //     changeFile(item, label);
+  //   };
+
+  //   return (
+  //     <div className="dropdown">
+  //       <button
+  //         onClick={handleToggle}
+  //         className={`dropdown-button ${
+  //           isOpen === true ? "changeFontColor" : ""
+  //         } `}
+  //       >
+  //         {label}
+  //       </button>
+  //       <div className={`dropdown-content ${isOpen ? "open" : ""}`}>
+  //         {items.map((item, index) => (
+  //           <div
+  //             key={index}
+  //             style={{ color: "#0d1430" }}
+  //             className={`dropdown-item`}
+  //             onClick={() => {
+  //               handleItemClick(item);
+  //             }}
+  //           >
+  //             {item}
+  //           </div>
+  //         ))}
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+  const [openedDropdown, setOpenedDropdown] = useState("");
+  const [openedDropdownitem, setOpenedDropdownitem] = useState("");
+
+  const Dropdown = ({ id, label, items }) => {
+    // const [dropdownOpenState, setDropdownOpenState] = useState({});
+
+    // const isOpen = dropdownOpenState[id] || false;
+
+    const handleToggle = (id) => {
+      if (id === openedDropdown) {
+        setOpenedDropdown(null);
+        console.log(openedDropdown);
+      } else {
+        setOpenedDropdown(label);
+      }
+      // setDropdownOpenState({ ...dropdownOpenState, [id]: !isOpen }); // Update dropdown open state
+    };
+
+    const handleItemClick = (item) => {
+      setOpenedDropdownitem(item);
+      changeFile(item, label);
+      if (window.innerWidth < 620) {
+        setIsActive(!isActive);
+        setIsSideBarOpen(!isSideBarOpen);
+      }
     };
 
     return (
       <div className="dropdown">
         <button
-          onClick={() => {
-            handleToggle();
-          }}
+          onClick={() => handleToggle(label)}
           className={`dropdown-button ${
-            isOpen === true ? "changeFontColor" : ""
+            openedDropdown === label ? "changeFontColor" : ""
           } `}
         >
           {label}
         </button>
-        <div className={`dropdown-content ${isOpen ? "open" : ""}`}>
+        <div
+          className={`dropdown-content ${
+            openedDropdown === label ? "open" : ""
+          }`}
+        >
           {items.map((item, index) => (
             <div
               key={index}
               style={{ color: "#0d1430" }}
-              className={`dropdown-item`}
-              onClick={() => {
-                changeFile(item, label);
-              }}
+              className={`dropdown-item  ${
+                openedDropdownitem === item ? "changeBgColor" : ""
+              } `}
+              onClick={() => handleItemClick(item)}
             >
               {item}
             </div>
@@ -376,7 +441,6 @@ const Home = () => {
                     key={index}
                     className={`dropdown-item search-r`}
                     onClick={() => {
-                      console.log("hello");
                       changeFile(subheading);
                       setSearchResultOpen(false);
                     }}
@@ -449,7 +513,6 @@ const Home = () => {
                       key={index}
                       className={`dropdown-item search-r`}
                       onClick={() => {
-                        console.log("hello");
                         changeFile(subheading);
                         setSearchResultOpen(false);
                       }}

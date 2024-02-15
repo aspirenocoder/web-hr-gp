@@ -223,7 +223,14 @@
 }
 
 .changeFontColor {
-  font-weight: 800;
+  background-color: #2f3032;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.changeBgColor {
+  background-color: #ccc;
+  border-radius: 6px;
 }
 
 .dropdown-content {
@@ -285,6 +292,7 @@
 .formsContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   justify-content: center;
   align-items: center;
   /* z-index: -1; */
@@ -317,7 +325,6 @@
   position: relative;
   text-align: center;
   border-radius: 0.45em;
-  font-family: "Arial";
   transition: background 0.3s;
   border: 1px solid black;
   cursor: pointer;
@@ -402,6 +409,11 @@
   top: -100%;
 }
 
+.custom-font span {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
 .button:hover .icon {
   top: 0;
 }
@@ -473,14 +485,19 @@
   }
 
   .Chat-container {
-    width: 90%;
+    width: 100%;
     margin-top: 20%;
+    margin-left: 10%;
   }
 
   .custom-font {
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 800;
-    color: #2ca;
+    width: 90vw;
+  }
+
+  .custom-font span {
+    font-family: "Roboto", sans-serif;
+    /* font-weight: 800; */
+    /* color: #2ca; */
   }
 
   .dropdown-button,
@@ -496,6 +513,7 @@
   }
   .formsContainer {
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
   }
   .App-header {
     display: flex;
