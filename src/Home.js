@@ -226,7 +226,21 @@ const Home = () => {
     {
       heading: {
         title: "Forms & Annexures",
-        subheadings: ["Downloadable Forms"],
+        subheadings: [
+          "Downloadable Forms",
+          "Annexure 1",
+          "Annexure 2.1",
+          "Annexure 2.2",
+          "Annexure 3",
+          "Annexure 4.1",
+          "Annexure 4.2",
+          "Annexure 5.1",
+          "Annexure 5.2",
+          "Annexure 5.3",
+          "Annexure 5.4",
+          "Annexure 5.5",
+          "Annexure 6",
+        ],
       },
     },
   ]);
@@ -366,7 +380,7 @@ const Home = () => {
   };
 
   const changeFile = (subheadingName, headingName) => {
-    if (headingName === "Forms & Annexures") {
+    if (subheadingName === "Downloadable Forms") {
       setFormsComponentToRender(true);
       setContentToRender(false);
     } else {
@@ -378,6 +392,8 @@ const Home = () => {
         .catch((error) => console.error("Error loading HTML:", error));
     }
   };
+
+  window.changeFile = changeFile;
 
   const signout = () => {
     window.localStorage.removeItem("number");
