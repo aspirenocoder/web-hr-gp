@@ -12,7 +12,7 @@ const App = () => {
             path="/"
             element={
               window.localStorage.getItem("number") === null ? (
-                <Home />
+                <Login />
               ) : (
                 <Home />
               )
