@@ -149,6 +149,8 @@ const Home = () => {
       heading: {
         title: "Compensation And Benefits",
         subheadings: [
+          "Reward & Recognition Policy",
+          "Work Injury Policy",
           "Pay Day & Pay Cycle",
           "Cost To The Company",
           "Tax Compliance",
@@ -220,6 +222,17 @@ const Home = () => {
           "Specification Of Laptop",
           "Brands",
           "Cost Factor",
+        ],
+      },
+    },
+
+    {
+      heading: {
+        title: "Termination Policy",
+        subheadings: [
+          "Objective & Scope",
+          "Reasons For Termination",
+          "Procedure",
         ],
       },
     },
