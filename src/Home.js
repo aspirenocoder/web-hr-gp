@@ -31,6 +31,7 @@ const Home = () => {
     "Travel Advance Requisition",
     "Travel Expenses Track Sheet",
     "Travel Expensive Format",
+    "Manpower Requisition Form",
   ]);
 
   useEffect(() => {
@@ -150,7 +151,6 @@ const Home = () => {
         title: "Compensation And Benefits",
         subheadings: [
           "Reward & Recognition Policy",
-          "Work Injury Policy",
           "Pay Day & Pay Cycle",
           "Cost To The Company",
           "Tax Compliance",
@@ -161,6 +161,7 @@ const Home = () => {
           "Salary Advance Policy",
           "Medical Insurance Policy",
           "Marriage Gift Policy",
+          "Work Injury Policy",
         ],
       },
     },
