@@ -117,6 +117,7 @@ const Home = () => {
           "Drugs Alcohol Smoking Weapons",
           "Conduct Rules",
           "Rules on Disciplinary Action",
+          "Grooming Standards",
         ],
       },
     },
