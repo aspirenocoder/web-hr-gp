@@ -14,6 +14,7 @@ const Home = () => {
   const [searchResultOpen, setSearchResultOpen] = useState(false);
   const [formsComponentToRender, setFormsComponentToRender] = useState(false);
   const [contentToRender, setContentToRender] = useState(true);
+  const [orgHTMLContent, setOrgHTMLContent] = useState(null);
   const [downloadableForms, setDownloadableForms] = useState([
     "Cash Voucher-Factory",
     "C-Off Form",
@@ -41,6 +42,7 @@ const Home = () => {
         .then((data) => setHtmlContent(data))
         .catch((error) => console.error("Error loading HTML:", error));
     }
+
     document.title = "Gourmet Popcornica";
     const handleDocumentClick = (event) => {
       const searchResultContainer = document.querySelector(".search-result");
@@ -163,6 +165,7 @@ const Home = () => {
           "Medical Insurance Policy",
           "Marriage Gift Policy",
           "Work Injury Policy",
+          "Children Higher Education Fund Policy",
         ],
       },
     },
@@ -401,9 +404,22 @@ const Home = () => {
     } else {
       setContentToRender(true);
       setFormsComponentToRender(false);
+
       fetch(`/${subheadingName}.html`)
         .then((response) => response.text())
-        .then((data) => setHtmlContent(data))
+        .then((data) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data, "text/html");
+          const scripts = doc.getElementsByTagName("script");
+
+          Array.from(scripts).forEach((script) => {
+            const newScript = document.createElement("script");
+            newScript.text = script.text;
+            document.head.appendChild(newScript);
+          });
+
+          setHtmlContent(data);
+        })
         .catch((error) => console.error("Error loading HTML:", error));
     }
   };
