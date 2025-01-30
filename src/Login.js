@@ -114,6 +114,7 @@ const Login = () => {
     <div className="container">
       <div className="login-container">
         <img
+        alt="gp-logo"
           src={require("./assets/gp_logo.webp")}
           style={{ width: 100, height: 70 }}
         />

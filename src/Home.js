@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { useState, useEffect } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
@@ -8,14 +8,14 @@ import { IoIosSearch } from "react-icons/io";
 const Home = () => {
   const navigate = useNavigate();
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [searchInput, setSearchInput] = useState("");
   const [filteredSubheadings, setFilteredSubheadings] = useState([]);
   const [searchResultOpen, setSearchResultOpen] = useState(false);
   const [formsComponentToRender, setFormsComponentToRender] = useState(false);
   const [contentToRender, setContentToRender] = useState(true);
-  const [orgHTMLContent, setOrgHTMLContent] = useState(null);
-  const [downloadableForms, setDownloadableForms] = useState([
+  // const [orgHTMLContent, setOrgHTMLContent] = useState(null);
+  const downloadableForms = [
     "Cash Voucher-Factory",
     "C-Off Form",
     "Induction Checklist",
@@ -33,7 +33,7 @@ const Home = () => {
     "Travel Expenses Track Sheet",
     "Travel Expensive Format",
     "Manpower Requisition Form",
-  ]);
+  ];
 
   useEffect(() => {
     if (htmlContent === "") {
@@ -60,20 +60,20 @@ const Home = () => {
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     };
-  }, [searchResultOpen]);
+  }, [searchResultOpen,htmlContent]);
 
   const [isSideBarOpen, setIsSideBarOpen] = useState(
     window.innerWidth < 620 ? false : true
   );
-  const [contentState, setContentState] = useState("");
+  // const [contentState, setContentState] = useState("");
   const [isActive, setIsActive] = useState(
     window.innerWidth < 620 ? false : true
   );
   const [htmlContent, setHtmlContent] = useState("");
-  const [subheadingName, setSubheadingName] = useState("");
-  const [isSelected, setSelected] = useState(null);
+  // const [subheadingName, setSubheadingName] = useState("");
+  // const [isSelected, setSelected] = useState(null);
 
-  const [dropdownsState, setDropdownsState] = useState([
+  const dropdownsState = [
     {
       heading: {
         title: "General",
@@ -261,7 +261,7 @@ const Home = () => {
         ],
       },
     },
-  ]);
+  ];
 
   // const Dropdown = ({ id, label, items }) => {
   //   const [isOpen, setIsOpen] = useState(false);
@@ -460,7 +460,7 @@ const Home = () => {
         </div>
 
         <div className="detail">
-          <img src={require("./assets/gp_logo.webp")} className="logo" />
+          <img src={require("./assets/gp_logo.webp")} alt="gp-logo" className="logo" />
           <p className="emp">Employee Policies</p>
 
           <div
