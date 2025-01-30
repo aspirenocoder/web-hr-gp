@@ -12,7 +12,7 @@ const Login = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [error, setError] = useState("");
   const [color, setColor] = useState("red");
-  const API_URL = "http://3.108.219.210:5000";
+  const API_URL = "https://web-hr-gp-backend.onrender.com";
 
   useEffect(() => {
     // fetch("http://localhost:5000/api/post", {
