@@ -14,6 +14,8 @@ const Home = () => {
   const [searchResultOpen, setSearchResultOpen] = useState(false);
   const [formsComponentToRender, setFormsComponentToRender] = useState(false);
   const [contentToRender, setContentToRender] = useState(true);
+  const [htmlContent, setHtmlContent] = useState("");
+
   // const [orgHTMLContent, setOrgHTMLContent] = useState(null);
   const downloadableForms = [
     "Cash Voucher-Factory",
@@ -69,7 +71,6 @@ const Home = () => {
   const [isActive, setIsActive] = useState(
     window.innerWidth < 620 ? false : true
   );
-  const [htmlContent, setHtmlContent] = useState("");
   // const [subheadingName, setSubheadingName] = useState("");
   // const [isSelected, setSelected] = useState(null);
 
