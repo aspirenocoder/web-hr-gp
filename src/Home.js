@@ -357,7 +357,7 @@ const Home = () => {
         title: "Forms & Annexures",
         subheadings: [
           "Downloadable Forms",
-          "Annexure 1",
+          // "Annexure 1",
           "Annexure 2.1",
           "Annexure 2.2",
           "Annexure 2.3",
@@ -382,7 +382,6 @@ const Home = () => {
           "Annexure 11.1",
           "Annexure 14.1",
           "Annexure 15.1"
-
 
         ],
       },
