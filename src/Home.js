@@ -79,36 +79,15 @@ const Home = () => {
       heading: {
         title: "General",
         subheadings: [
-          "Declaration",
           "About Gourmet Popcornica LLP",
           "Vision",
           "Mission",
           "Values",
           "Introduction",
+          "Definitions",
           "Equal Opportunity",
           "Terms of Employment",
           "Confidentiality",
-          "Organization Chart",
-        ],
-      },
-    },
-    {
-      heading: {
-        title: "Recruitment Policy",
-        subheadings: [
-          "Manpower Requisition",
-          "Advertisement",
-          "Processing of Applications",
-          "Interview Panel",
-          "Interview & Selection",
-          "Conveyance reimbursements for Candidates",
-          "Final Selection",
-          "Joining Procedure",
-          "Payment of Salary",
-          "Deductions from salary",
-          "Identity card",
-          "Appointment",
-          "Internship",
         ],
       },
     },
@@ -118,21 +97,68 @@ const Home = () => {
         subheadings: [
           "Protection & Proper Use Of Assets",
           "Drugs Alcohol Smoking Weapons",
+          "Grooming Standards",
           "Conduct Rules",
           "Rules on Disciplinary Action",
-          "Grooming Standards",
         ],
       },
     },
     {
       heading: {
-        title: "Sexual Harassment Policy",
+        title: "Rules on Disciplinary Action",
         subheadings: [
+          "Purpose & Scope",
+          "Disciplinary Procedure",
+          "Warning Process",
+          "Receiving and Giving Gifts",
+          "Annual Conflict of Interest",
+        ],
+      },
+    },
+    {
+      heading: {
+        title: "Recruitment and Selection Policy",
+        subheadings: [
+          "Purpose",
+          "Scope",
+          "Manpower Requisition",
+          "Sources of Recruitment",
+          "Recruitment Process",
+          "Screening of Applications",
+          "Interview Panel",
+          "Interview & Selection Process",
+          "Final Selection",
+          "Conveyance reimbursements for Candidates",
+          "Internship"
+          
+        ],
+      },
+    },
+    {
+      heading: {
+        title: "New Employee Onboarding Policy",
+        subheadings: [
+          "Onboarding Policy - Purpose",
           "Scope",
           "Definitions",
           "Complaints Procedure",
           "Redressal Process",
           "Internal Complaints Committee",
+        ],
+      },
+    },
+    {
+      heading: {
+        title: "Probation and Confirmation Policy",
+        subheadings: [
+          "Probation and Confirmation - Purpose",
+          "Probation and Confirmation - Definitions",
+          "Probation Procedure",
+          "Notice Period",
+          "Termination of Services",
+          "Assessment",
+          "Confirmation",
+          "Confirmation Procedure"
         ],
       },
     },
@@ -152,46 +178,103 @@ const Home = () => {
     },
     {
       heading: {
+        title: "Travel And Conveyance",
+        subheadings: [
+          "Travel And Conveyance - Purpose",
+          "Classification of Cities",
+          "Travel And Conveyance - General Guidelines",
+          "Mode And Class Of Travel",
+          "Local Travel",
+          "Food Allowance during Official Travel",
+          "Accommodation & Lodging",
+        ],
+      },
+    },
+    
+
+    {
+      heading: {
+        title: "Food, Fuel and Vehicle Maintenance Allowance Policy",
+        subheadings: [
+          "Vehicle Maintenance - Purpose",
+          "Terms & Conditions - Vehicle Maintenance",
+          "Eligibility",
+          "Eligibility for Oil Palm",
+          "Daily Food Allowance - Purpose",
+          "Daily Food Allowance - General Guidelines",
+
+        ],
+      },
+    },
+    {
+      heading: {
+        title: "Performance Management System Policy",
+        subheadings: [
+          "Performance Management - Purpose",
+          "Performance Management - Definitions",
+          "Performance Management - General Guidelines",
+          "Performance Management - Eligibility Criteria",
+          "Performance Management System Process Flow",
+          "Annual Business Plan and Projection",
+          "Behavioural Competencies",
+          "Roles and Responsibilities",
+          "Escalation Process",
+          "Normalization of Appraisal Ratings",
+          "Performance Improvement Plan"
+          
+        ],
+      },
+    },
+    
+    {
+      heading: {
+        title: "Sexual Harassment Policy",
+        subheadings: [
+          "Harassment Policy - Objective",
+          "Harassment Policy - Scope",
+          "Harassment Policy - Definitions",
+          "Complaints Redressal Procedure",
+          "Receipt of Complaint",
+          "Confidentiality and Support",
+          "Investigation",
+          "Communication & Followup",
+          "Regular Review and Training",
+          "Internal Complaints Committee",
+          "Complaints made with a malicious intent",
+          "Dissemination of the Policy"
+        ],
+      },
+    },
+    {
+      heading: {
+        title: "INFORMATION TECHNOLOGY (IT) POLICY",
+        subheadings: [
+          "IT - Objective",
+          "Terms & Conditions - Vehicle Maintenance",
+          "Eligibility",
+          "Eligibility for Oil Palm",
+          "Daily Food Allowance - Purpose",
+          "Daily Food Allowance - General Guidelines",
+          "Loss or Damage",
+          "Non-Company Employees"
+        ],
+      },
+    }, 
+    {
+      heading: {
         title: "Compensation And Benefits",
         subheadings: [
-          "Reward & Recognition Policy",
+          "Compensation And Benefits",
           "Pay Day & Pay Cycle",
           "Cost To The Company",
           "Tax Compliance",
           "Provident Fund",
           "Employee State Insurance",
-          "Overtime",
           "Loan Policy",
-          "Salary Advance Policy",
-          "Medical Insurance Policy",
-          "Marriage Gift Policy",
-          "Work Injury Policy",
-          "Children Higher Education Fund Policy",
-        ],
-      },
-    },
-    {
-      heading: {
-        title: "Performance Review",
-        subheadings: [
-          "Purpose",
-          "Performance Scope",
-          "Guidelines",
-          "Roles And Responsibilities",
-          "Performance Management Process",
-          "Policy Approving Authority",
-        ],
-      },
-    },
-    {
-      heading: {
-        title: "Travel And Conveyance",
-        subheadings: [
-          "Mode And Class Of Travel",
-          "Local Travel",
-          "Interstate - Food Allowance",
-          "Intercity - Food Allowance",
-          "Accommodation & Lodging",
+          "Salary Advance Guidelines",
+          "Medical Insurance Guidelines",
+          "Marriage Gift Guidelines",
+          "Children Higher Education Fund Policy"
         ],
       },
     },
@@ -199,10 +282,11 @@ const Home = () => {
       heading: {
         title: "Training & Development Policy",
         subheadings: [
+          "Training & Development Policy",
           "Objectives & Scope",
           "Types Of Training",
           "Mode & Process Of Training",
-          "Ideal Training Plan For A Calendar Year",
+          "Training Plan",
         ],
       },
     },
@@ -210,38 +294,63 @@ const Home = () => {
       heading: {
         title: "Safety, Health And Environment",
         subheadings: [
+          "Safety, Health And Environment",
           "Legal Compliance",
           "Training & Awareness",
           "Personal Protective Equipment",
+          "Work Injury Policy",
+          "Policy Guidelines",
         ],
       },
     },
     {
       heading: {
-        title: "IT Policy",
+        title: "Reward and Recognition Policy",
         subheadings: [
-          "Entitlement",
-          "IT Security",
-          "Loss Or Damage",
-          "Separation Or Transfer",
-          "Replacement",
-          "Specification Of Laptop",
-          "Brands",
-          "Cost Factor",
+          "Reward and Recognition Policy",
+          "Types of Rewards and Recognition",
+          "Rewards & Recognition - Policy Guidelines",
+          "Objective Evaluation",
+          "Administration of the Policy",
+          "Policy Implementation",
         ],
       },
     },
+    {
+      heading: {
+        title: "Policy on Cellular SIM Cards",
+        subheadings: [
+          "Policy on Cellular SIM Cards - Objective",
+          "Policy on Cellular SIM Cards - Eligibility",
+          "Policy on Cellular SIM Cards - Process",
+          "Policy on Cellular SIM Cards - Guidelines"
+        ],
+      },
+    },
+    // {
+    //   heading: {
+    //     title: "Performance Review",
+    //     subheadings: [
+    //       "Purpose",
+    //       "Performance Scope",
+    //       "general_guidelines_67",
+    //       "Roles And Responsibilities",
+    //       "Performance Management Process",
+    //       "Policy Approving Authority",
+    //     ],
+    //   },
+    // },
 
-    {
-      heading: {
-        title: "Termination Policy",
-        subheadings: [
-          "Objective & Scope",
-          "Reasons For Termination",
-          "Procedure",
-        ],
-      },
-    },
+    // {
+    //   heading: {
+    //     title: "Termination Policy",
+    //     subheadings: [
+    //       "Objective & Scope",
+    //       "Reasons For Termination",
+    //       "Procedure",
+    //     ],
+    //   },
+    // },
     {
       heading: {
         title: "Forms & Annexures",
@@ -250,15 +359,30 @@ const Home = () => {
           "Annexure 1",
           "Annexure 2.1",
           "Annexure 2.2",
-          "Annexure 3",
+          "Annexure 2.3",
+          "Annexure 3.1",
           "Annexure 4.1",
-          "Annexure 4.2",
           "Annexure 5.1",
           "Annexure 5.2",
           "Annexure 5.3",
-          "Annexure 5.4",
-          "Annexure 5.5",
-          "Annexure 6",
+          "Annexure 6.1",
+          "Annexure 6.2",
+          "Annexure 6.3",
+          "Annexure 6.4",
+          "Annexure 7.1",
+          "Annexure 7.2",
+          "Annexure 7.3",
+          "Annexure 8.1",
+          "Annexure 8.2",
+          "Annexure 8.3",
+          "Annexure 8.4",
+          "Annexure 8.5",
+          "Annexure 10.1",
+          "Annexure 11.1",
+          "Annexure 14.1",
+          "Annexure 15.1"
+
+
         ],
       },
     },
