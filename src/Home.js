@@ -99,15 +99,7 @@ const Home = () => {
           "Drugs Alcohol Smoking Weapons",
           "Grooming Standards",
           "Conduct Rules",
-          "Rules on Disciplinary Action",
-        ],
-      },
-    },
-    {
-      heading: {
-        title: "Rules on Disciplinary Action",
-        subheadings: [
-          "Purpose & Scope",
+          "Rules on Disciplinary Action - Purpose & Scope",
           "Disciplinary Procedure",
           "Warning Process",
           "Receiving and Giving Gifts",
@@ -115,6 +107,7 @@ const Home = () => {
         ],
       },
     },
+   
     {
       heading: {
         title: "Recruitment and Selection Policy",
@@ -139,18 +132,11 @@ const Home = () => {
         title: "New Employee Onboarding Policy",
         subheadings: [
           "Onboarding Policy - Purpose",
-          "Scope",
-          "Definitions",
-          "Complaints Procedure",
-          "Redressal Process",
-          "Internal Complaints Committee",
-        ],
-      },
-    },
-    {
-      heading: {
-        title: "Probation and Confirmation Policy",
-        subheadings: [
+          // "Scope",
+          // "Definitions",
+          // "Complaints Procedure",
+          // "Redressal Process",
+          // "Internal Complaints Committee",
           "Probation and Confirmation - Purpose",
           "Probation and Confirmation - Definitions",
           "Probation Procedure",
@@ -162,6 +148,21 @@ const Home = () => {
         ],
       },
     },
+    // {
+    //   heading: {
+    //     title: "Probation and Confirmation Policy",
+    //     subheadings: [
+    //       "Probation and Confirmation - Purpose",
+    //       "Probation and Confirmation - Definitions",
+    //       "Probation Procedure",
+    //       "Notice Period",
+    //       "Termination of Services",
+    //       "Assessment",
+    //       "Confirmation",
+    //       "Confirmation Procedure"
+    //     ],
+    //   },
+    // },
     {
       heading: {
         title: "Leave & Attendance",
@@ -169,10 +170,10 @@ const Home = () => {
           "Office Hours",
           "Permission",
           "On Duty",
-          "Procedure For Granting Leave",
+          // "Procedure For Granting Leave",
           "Kinds of Leave",
           "Public Holidays And Restricted Holidays",
-          "Leave Administration",
+          // "Leave Administration",
         ],
       },
     },
@@ -247,7 +248,7 @@ const Home = () => {
     },
     {
       heading: {
-        title: "INFORMATION TECHNOLOGY (IT) POLICY",
+        title: "Information Technology (IT) Policy",
         subheadings: [
           "IT - Objective",
           "Terms & Conditions - Vehicle Maintenance",
@@ -586,7 +587,7 @@ const Home = () => {
 
         <div className="detail">
           <img src={require("./assets/gp_logo.webp")} alt="gp-logo" className="logo" />
-          <p className="emp">Employee Policies</p>
+          <p className="emp">HR Manual</p>
 
           <div
             style={{
