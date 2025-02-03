@@ -39,7 +39,7 @@ const Home = () => {
 
   useEffect(() => {
     if (htmlContent === "") {
-      fetch(`/Declaration.html`)
+      fetch(`/About Gourmet Popcornica LLP.html`)
         .then((response) => response.text())
         .then((data) => setHtmlContent(data))
         .catch((error) => console.error("Error loading HTML:", error));
