@@ -66,18 +66,20 @@ const Login = () => {
   };
 
   const sendOTP = () => {
+    setOTPSent(true);
+    setText("Login");
+    setError("OTP Sent");
+    setColor("white");
+
     console.log(mobileNumber);
     if (mobileNumber !== "" && mobileNumber.length === 10) {
       axios
         .post(`${API_URL}/send-otp`, { number: mobileNumber })
         .then((res) => {
           console.log(res.data);
-          setOTPSent(true);
-          setText("Login");
-          setError("OTP Sent");
-          setColor("white");
         })
         .catch((err) => console.log(err));
+
       // fetch(`${API_URL}/send-otp`, {
       //   method: "POST",
       //   body: JSON.stringify({
@@ -114,7 +116,7 @@ const Login = () => {
     <div className="container">
       <div className="login-container">
         <img
-        alt="gp-logo"
+          alt="gp-logo"
           src={require("./assets/gp_logo.webp")}
           style={{ width: 100, height: 70 }}
         />
@@ -125,11 +127,13 @@ const Login = () => {
           onChange={handleMobileNumberChange}
         />
         {OTPSent && (
+
           <input
             placeholder="Enter OTP"
             type="tel"
             onChange={handleOTPChange}
           />
+
         )}
         {error !== "" && <p style={{ color: color }}>{error}</p>}
 
